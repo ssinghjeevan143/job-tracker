@@ -1,5 +1,5 @@
 // Direct Render ka live URL daal rahe hain
-const API_BASE_URL = 'https://onrender.com';
+const API_BASE_URL = 'https://job-tracker-backend-7slw.onrender.com';
 const BASE = `${API_BASE_URL}/api/applications`;
 
 async function handle(res) {

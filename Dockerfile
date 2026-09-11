@@ -1,7 +1,8 @@
 # Build Stage
 FROM maven:3.8.3-openjdk-17 AS build
 COPY . .
-RUN mvn clean package -DskipTests
+# Ham Maven ko bol rahe hain ki backend folder ke andar jaakar build kare
+RUN mvn -f backend/pom.xml clean package -DskipTests
 
 # Package Stage
 FROM eclipse-temurin:17-jdk

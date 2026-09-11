@@ -1,11 +1,12 @@
 # Build Stage
 FROM maven:3.8.3-openjdk-17 AS build
+WORKDIR /app
 COPY . .
-# Ham Maven ko bol rahe hain ki backend folder ke andar jaakar build kare
 RUN mvn -f backend/pom.xml clean package -DskipTests
 
 # Package Stage
 FROM eclipse-temurin:17-jdk
-COPY --from=build /backend/target/job-tracker-0.0.1-SNAPSHOT.jar app.jar
+WORKDIR /app
+COPY --from=build /app/backend/target/job-tracker-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","/app.jar"]
+ENTRYPOINT ["java","-jar","app.jar"]

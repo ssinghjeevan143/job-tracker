@@ -1,7 +1,7 @@
-
-// Isko change karke aisa likh lijiye
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '';
+// Direct Render ka live URL daal rahe hain
+const API_BASE_URL = 'https://job-tracker-backend-75lw.onrender.com';
 const BASE = `${API_BASE_URL}/api/applications`;
+
 
 
 async function handle(res) {

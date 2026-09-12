@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/applications")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class JobApplicationController {
 
     private final JobApplicationService service;
